@@ -21,7 +21,7 @@ int main() {
     int b = 100; 
     while (b <= 999) {
       if (isPalindrome(a * b) && a * b > largestPalindrome) {
-	largestPalindrome = a * b; 
+	      largestPalindrome = a * b; 
       }
       ++b; 
     }

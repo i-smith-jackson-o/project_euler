@@ -4,7 +4,7 @@
 // 232792560
 #include <iostream>
 
-static unsigned long long lcm_until(unsigned n) {
+static unsigned long long lcm_until(unsigned n) noexcept {
   auto r = 1UL; 
   for (auto i = 2UL; i <= n; ++i) {
     if (r % i) {

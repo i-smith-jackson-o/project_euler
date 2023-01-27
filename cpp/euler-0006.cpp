@@ -1,0 +1,2 @@
+//sum square difference. 
+
