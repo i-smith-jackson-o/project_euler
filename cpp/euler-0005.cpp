@@ -7,8 +7,7 @@
 #include <iostream>
 #include <vector>
 #include <cstdint>
-#include <cassert>
-#include <math.h>
+#include <cmath>
 
 std::int64_t powint(std::int64_t base, int exp) {
   assert(exp >= 0 && "error"); 
@@ -24,7 +23,7 @@ std::int64_t powint(std::int64_t base, int exp) {
 }
 
 int main() {
-  std::vector<float> p {1,2,3,5,7,11,13,17,19, 21}; 
+  std::vector<float> p {1,2,3,5,7,11,13,17,19,21}; 
   std::vector<float> a {0}; 
 
   int k = 20; 
@@ -44,7 +43,6 @@ int main() {
     N = N * powint(p[i], a[i]);  
     ++i;
   }
-
   std::cout << N << std::endl; 
   return 0; 
 }
