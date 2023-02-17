@@ -6,16 +6,45 @@
 // 232792560
 #include <iostream>
 #include <vector>
+#include <cstdint>
+#include <cassert>
 #include <math.h>
 
+std::int64_t powint(std::int64_t base, int exp) {
+  assert(exp >= 0 && "error"); 
+
+  std::int64_t result { 1 }; 
+  while (exp) {
+    if (exp & 1)
+      result *= base; 
+    exp >>= 1; 
+    base *= base; 
+  }
+  return result; 
+}
+
 int main() {
-  std::vector<int> p {1,2,3,5,7,11,13,17,19}; 
+  std::vector<float> p {1,2,3,5,7,11,13,17,19, 21}; 
+  std::vector<float> a {0}; 
+
   int k = 20; 
+  unsigned long long N = 1; 
   int i = 1; 
   bool check = true; 
   float limit = sqrt(k); 
 
+  while (p[i] <= k) {
+    a.push_back(1); 
+    if (check) {
+      if (p[i] <= limit) { 
+	a[i] = floor( log(k) / log(p[i]) ); 
+      } else
+	check = false; 
+      }
+    N = N * powint(p[i], a[i]);  
+    ++i;
+  }
 
-
+  std::cout << N << std::endl; 
   return 0; 
 }
