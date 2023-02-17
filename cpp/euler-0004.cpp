@@ -2,16 +2,17 @@
 #include <algorithm>
 
 int reverse(int n) {
-  int reversed = 0; 
-  while (n > 0) {
-    reversed = 10*reversed + n % 10; 
-    n = n/10; 
+  int rem, rev = 0; 
+  while(n!=0) {
+    rem = n%10; 
+    rev = rev*10+rem; 
+    n/=10; 
   }
-  return reversed; 
+  return rev; 
 }
 
 bool isPalindrome(int n) {
-  return n = reverse(n); 
+  return n == reverse(n); 
 }
 
 int main() {
