@@ -5,4 +5,17 @@
  * numbers from 1 to 20?*/
 // 232792560
 #include <iostream>
+#include <vector>
+#include <math.h>
 
+int main() {
+  std::vector<int> p {1,2,3,5,7,11,13,17,19}; 
+  int k = 20; 
+  int i = 1; 
+  bool check = true; 
+  float limit = sqrt(k); 
+
+
+
+  return 0; 
+}
