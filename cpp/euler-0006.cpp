@@ -1,9 +1,9 @@
 #include <iostream>
 
 int main() {
-  int n = 100; 
-  int sum {}; 
-  int sumSquares {}; 
+  unsigned long long n = 100; 
+  unsigned long long sum {}; 
+  unsigned long long sumSquares {}; 
 
   for (int i = 0; i <= n; i++) {
     sumSquares += i * i; 
