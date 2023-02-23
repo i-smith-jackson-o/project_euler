@@ -13,8 +13,37 @@
 // what is the value of the first triangle number to have over 500 divisors?
 
 #include <iostream>
+#include <vector>
+#include <cmath>
+
+long getTriangleNumber(int n) {
+  long sum = 0; 
+  for (int i = 0; i <= n; ++i)
+    sum += i; 
+
+  return sum; 
+}
+
+int numDivisors(int n) {
+  std::vector<int> divisors {}; 
+
+  for (int i = 0; i <= sqrt(n); i++) {
+    if (n % i == 0) {
+      divisors.push_back(i); 
+    }
+  }
+  int nDivisors = divisors.size(); 
+  return nDivisors; 
+}
 
 int main() {
-
+  for (int i = 1; ; ++i) {
+    int triangleNum = getTriangleNumber(i); 
+    int divisors = numDivisors(triangleNum); 
+    if (divisors == 500) { 
+      std::cout << i << " " << triangleNum << " " << divisors << std::endl; 
+      return 1; 
+    }
+  }
   return 0; 
 }
